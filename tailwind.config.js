@@ -5,6 +5,8 @@ export default {
     extend: {
       colors: {
         body: "#050505",
+        "selected-text": "#6495ed",
+        theme: "#00008b",
       },
     },
     fontFamily: {
