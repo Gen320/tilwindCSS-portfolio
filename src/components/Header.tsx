@@ -2,26 +2,13 @@
 
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
 
 export const Header: React.FC = () => {
-  const [isHidden, setIshidden] = useState(false);
-
-  const handleHidden = () => {
-    setIshidden((prev) => !prev);
-  };
   return (
     <header className="py-6">
       <div className="container mx-auto flex justify-between items-center px-8 md:px-14">
         <div className="text-3xl font-bold"> Gen.com </div>
-        <button className="md:hidden" onClick={handleHidden}>
-          <FontAwesomeIcon icon={faBars} />
-        </button>
-        <div
-          className={`space-x-12 ${
-            isHidden && "hidden"
-          } md:flex md:flex-col md:items-right`}
-        >
+        <div className="space-x-12 md:flex">
           <a
             href="/"
             className="hover:text-selected-text transition-all duration-300"
@@ -45,6 +32,9 @@ export const Header: React.FC = () => {
               お問い合わせ
             </button>
           </a>
+        </div>
+        <div className="md:hidden">
+          <FontAwesomeIcon icon={faBars} />
         </div>
       </div>
     </header>
